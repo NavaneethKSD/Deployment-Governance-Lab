@@ -3,12 +3,13 @@ name: Deploy Checkout Service
 on:
   push:
     branches:
-      - '*'
+      - main
   workflow_dispatch:
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment: production
     permissions:
       contents: read
       id-token: write
@@ -30,9 +31,6 @@ jobs:
           ENVIRONMENT: production
         run: |
           echo "Deploying to production..."
-          echo "Deploy key: ${DEPLOY_KEY:0:10}..."
-          echo "Database URL: $DATABASE_URL"
-          echo "API Token: ${API_TOKEN:0:10}..."
           echo "Application deployed successfully"
           echo "Deployment timestamp: $(date)"
 
