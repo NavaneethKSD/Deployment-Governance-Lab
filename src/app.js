@@ -46,3 +46,4 @@ app.listen(PORT, () => {
   console.log(`Checkout Service listening on port ${PORT}`);
   console.log(`Environment: ${process.env.ENVIRONMENT || 'unknown'}`);
 });
+
